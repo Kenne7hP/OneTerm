@@ -38,3 +38,23 @@
 ## 验证依据
 
 上述状态依据当前源码、随项目维护的功能说明与发布记录。11 月 24 日路径交互变更的隔离环境记录为工作台检查 40/40、桌面交互检查 63/63、通用界面检查 303/303；翻译检查记录为缺失项与占位符错误均为零。这些数字对应当次构建，真实账号与物理输入验收另列于上节。
+
+## 从源码运行
+
+OneTerm 是基于 [Qingxuan365/oneAI](https://github.com/Qingxuan365/oneAI/tree/f85e6b9162c66c421a526b51f3006863e6cd8c33) 开发的 Windows 桌面工作台。源码采用 [MIT License](LICENSE)，保留上游版权声明。公开版使用上游图标。
+
+在 Windows x64 上安装 Node.js 20 和 npm 后，在仓库根目录运行：
+
+~~~powershell
+npm ci
+npm run dev
+~~~
+
+~~~powershell
+npm run build
+npm run check:i18n
+npm run check:workbench
+npm run build:win
+~~~
+
+上述命令分别编译应用、检查界面翻译、运行工作台回归检查、生成 Windows 安装程序。安装程序输出到 release 目录。要使用 Codex、Kimi 或 Antigravity，请先安装相应工具。
